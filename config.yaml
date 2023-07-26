@@ -1,0 +1,21 @@
+baseURL: 'https://b.r0.at/'
+languageCode: 'en-us'
+title: 'Wurstkäse'
+theme: 'PaperMod'
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+
+  ja:
+    languageName: 日本語
+    weight: 2
+
+  de:
+    languageName: Deutsch
+    weight: 3
+
+params:
+  defaultTheme: light
