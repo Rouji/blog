@@ -20,7 +20,7 @@ For the most part not too difficult. The ribbon cables provided in the kit are s
 ![weird tree](weird_tree.jpg)
 ... unless you have helping hands. ([the tool](https://duckduckgo.com/?t=ffab&q=soldering+helping+hands&iax=images&ia=images), or human I guess)  
 
-# Tricky bit #1: Soldering the Switches
+## Tricky bit #1: Soldering the Switches
 The PCBs need to be bent and held into place while soldering the Switches.  
 The PCBs are thinner than usual for this purpose.  
 They are however not actual flex PCBs, and kind of feel like they're gonna snap.  
@@ -30,7 +30,7 @@ The middle row is basically spot-on everywhere, but the top and bottom rows woul
 Functionality of the switches and RGB are not affected, but something is definitely not right there. 
 ![gap](gap2.jpg)
 
-# Tricky bit #2: Cables
+## Tricky bit #2: Cables
 The Cables are big and stiff and space is very limited. Getting them routed to where they need to go and all stuffed in without breaking/puncturing them anywhere is a chore.  
 I got weird ghosting issues just by one (possibly multiple?) switch's pin touching one of the cables, even without actually puncturing it. So do make sure to trim everything very short and bend the cables away from any pointy component legs. 
 ![stuffing](stuffing.jpg)
@@ -85,7 +85,7 @@ input "43256:6194:Bastard_Keyboards_Charybdis_Nano_(3x5)_Splinky_Mouse" {
 To figure out what ID a button has, use `libinput debug-events`
 
 ## Compiling/Flashing
-After double-pressing the reset button, the splinky presents itself as a USB storage device, which you're supposed to copy your .uf2 firmware file.  
+After double-pressing the reset button, the splinky presents itself as a USB storage device, which you're supposed to copy your .uf2 firmware file to.  
 Slightly convoluted way of doing things, but it's nice for compatibility/cross-platformness, since no special software is needed for flashing. Annoying to automate though.  
 I do something like this:
 ```bash
