@@ -16,35 +16,37 @@ tags:
 - Cheapo [XDA "Pudding" Keycaps](https://www.amazon.co.jp/gp/product/B0BN5P62ML/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1)
 
 # Das Ding Zusammenbauen
-Großteils nicht super schwierig. Weil die Flachbandkabel im Kit sind steif sind, muss man zwischendurch sehr akrobatische schwebende Lötmanöver an seltsamen Alienbäumen ausführen.  
+Großteils nicht super schwierig. Die Flachbandkabel im Kit sind steif, und man muss zwischendurch sehr akrobatische schwebende Lötmanöver an seltsamen Alienbäumen ausführen, aber das ist mehr nervig als schwierig.  
 ![weird tree](weird_tree.jpg)
 ... außer man hat eine dritte Hand. ([das Werkzeug](https://duckduckgo.com/?t=ffab&q=soldering+helping+hands&iax=images&ia=images), oder menschlich)  
 
 ## Problematischer Teil #1: Die Switches Anlöten
 Man muss die PCBs zurechtbiegen während man die Switches anlötet.  
-Die PCBs sind extra-dünn damit das möglich ist.  
-Sie sind allerdings keine echten flex PCBs, und fühlen sich and als würden sie dabei durchbrechen.  
-Meine sind nicht durchgebrochen, aber haben sich auch nicht richtig biegen lassen und sind auch nach dem Löten nicht komplett gebogen geblieben.  
+Die PCBs sind für diesen Zweck extra dünn, aber keine tatsächlichen flex-PCBs.  
+Das heißt, man *kann* sie biegen, aber sie fühlen sich dabei an, als könnten sie jeden Moment durchbrechen. Wie halt normale PCBs.  
+Meine sind nicht durchgebrochen, aber haben sich stark gewehrt und sind am ende auch nicht 100%ig ganz dort gewesen, wo ich sie haben wollte.  
 
-Die mittlere Reihe war überall problemlos, aber die obere und untere Reihe haben sich geweigert genau zu passen, und haben einen V-förmigen Spalt zwischen PCB und Switch.  
-Das hindert die Funktionalität von den Switches und RGB nicht, aber irgendwas ist da definitv nicht ganz richtig. 
+Die mittlere Reihe ging überall problemlos, aber die obere und untere Reihe haben einen V-förmigen Spalt zwischen PCB und Switch gelassen.  
+Das hindert die Funktionalität von den Switches und RGB nicht, aber irgendwas ist da definitiv nicht ganz richtig. 
 ![gap](gap2.jpg)
 
 ## Problematischer Teil #2: Kabel
-Die Kabel sind breit und steif, und viel Platz hat man auch nicht. Die alle stecken wo sie hingehören, und ins Case stopfen ohne dass irgendwas bricht oder durchstochen wird, ist eine ziemliche Arbeit.  
-Ich hatte seltsame ghosting Probleme weil ein Pin von einem (eventuell mehrere?) Switch eines von den Kabeln berührt hat, sogar ganz ohne Durchstechen. Es ist auf jeden Fall wichtig, alle Pins zu kürzen und die Kabel möglichst von allen Kontakten wegzubiegen. 
+Die Kabel sind breit und steif, und viel Platz hat man auch nicht. 
+Die alle hinstecken wo sie hingehören, und ins Case stopfen, ohne dass irgendwas bricht oder durchstochen wird, ist eine ziemliche Arbeit.  
+Ich hatte seltsame ghosting Probleme weil ein Pin von einem (eventuell mehrere?) Switch ein Kabel berührt hat, sogar ganz ohne Durchstechen. 
+Es ist also wichtig, alle Pins gut zu kürzen und die Kabel möglichst von allen Kontakten wegzubiegen. 
 ![stuffing](stuffing.jpg)
 ![stuffing2](stuffing2.jpg)
 
 # QMK
 Auf dem Keyboard läuft [QMK](https://qmk.fm/), weil was sonst. Meine Keymap/Config gibt's [hier](https://github.com/Rouji/Charybdis-QMK). 
-Ich hab absolut keinen Plan, wie eine effiziente Keymap für so wenige Tasten aussieht. Keine Gewehr auf blinden Copypaste. Die interessanten Teile sind wahrscheinlich alles außer der eigentlichen Keymap.
+Ich hab absolut keinen Plan, wie eine effiziente Keymap für so wenige Tasten aussieht. Keine Gewehr auf blinden Copypaste. Der interessante Teil ist wahrscheinlich alles außer der eigentlichen Keymap.
 
 ## Auto Mouse Layer
 Der [auto_mouse_layer](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_pointing_device.md#automatic-mouse-layer-idpointing-device-auto-mouse) (ein Layer, der autmatisch aktiviert wird, wenn man den Trackball bewegt) ist super praktisch, aber etwas problematisch mit dem Charybdis.
-Der optische Sensor ist sehr *sehr* **sehr** genau und empfindlich. Der nimmt die kleinsten Vibrationen vom sanftesten tippen auf und aktiviert den Layer einfach *permanent*.  
+Der optische Sensor ist sehr *sehr* **sehr** empfindlich. Der nimmt die kleinsten Vibrationen vom sanftesten Tippen auf und aktiviert den Layer einfach *permanent*.  
 
-Man kann das fixen mit einem Threshold:  
+Das lässt sich mit einem Threshold umgehen:  
 ```C
 static const uint16_t AUTO_MOUSE_THRESHOLD = 200;
 static uint16_t auto_mouse_cum = 0;
@@ -74,7 +76,7 @@ Linux-Benutzer können das problem mit libinput umgehen, mit dem [on-button scro
 Muss allerdings auf jedem PC konfiguriert werden, den man verwendet.  
 Ich habe persönlich KC_MS_BTN4 (den 4ten Mausbutton, aka "zurück-Knopf") in meiner Keymap, und lass libinput den als Scroll-Button verwenden.  
 
-Sway lässt einen dieses libinput feature konfigurieren, und meine Config sieht so aus:  
+Sway lässt einen dieses libinput Feature konfigurieren, und meine Config sieht so aus:  
 ```
 input "43256:6194:Bastard_Keyboards_Charybdis_Nano_(3x5)_Splinky_Mouse" {
     natural_scroll enabled
@@ -87,7 +89,7 @@ Um rauszufinden, welche ID ein Knopf hat, kann man `libinput debug-events` verwe
 
 ## Kompilieren/Flashen
 Wenn man den Resetknopf 2x schnell drückt, meldet sich der Splinky as USB Storage Gerät, auf das man sein .uf2 Firmware File kopieren muss.  
-Bisschen komische herangehensweise, aber ganz nett für Kompatiblität/Cross-platform-heit, weil man so keine extra Software zum Flashen braucht. Aber nervig zu automatisieren.  
+Bisschen komische Herangehensweise, aber ganz nett für Kompatibilität/Cross-platform-heit, weil man so keine extra Software zum Flashen braucht. Aber nervig zu automatisieren.  
 Ich mach sowas in der Richtung:
 ```bash
 cd $HOME/qmk_firmware
