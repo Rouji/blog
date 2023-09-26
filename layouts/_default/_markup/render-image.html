@@ -1,0 +1,18 @@
+{{ $image := .Page.Resources.GetMatch .Destination }}
+
+{{ $small_jpg := $image.Resize "800x q80 jpeg" }}
+{{ $small_webp := $image.Resize "800x q80 webp" }}
+{{ $medium_jpg := $image.Resize "1200x q80 jpeg" }}
+{{ $medium_webp := $image.Resize "1200x q80 webp" }}
+{{ $large_webp := $image.Resize "1500x q80 webp" }}
+
+
+<p>
+<a href={{ .Destination | safeURL }}>
+<picture>
+    <source type="image/webp" srcset="{{ $small_webp.RelPermalink | safeURL }} 500w, {{ $medium_webp.RelPermalink | safeURL }} 800w, {{ $large_webp.RelPermalink | safeURL }} 1200w" />
+    <source type="image/jpeg" srcset="{{ $small_jpg.RelPermalink | safeURL }} 500w, {{ $medium_jpg.RelPermalink | safeURL }} 800w" />
+  <img src="{{ $small_jpg.RelPermalink | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" style="width:auto;">
+</picture>
+</a>
+</p>
