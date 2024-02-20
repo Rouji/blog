@@ -84,21 +84,6 @@ input "43256:6194:Bastard_Keyboards_Charybdis_Nano_(3x5)_Splinky_Mouse" {
 ```
 To figure out what ID a button has, use `libinput debug-events`
 
-## Compiling/Flashing
-After double-pressing the reset button, the splinky presents itself as a USB storage device, which you're supposed to copy your .uf2 firmware file to.  
-Slightly convoluted way of doing things, but it's nice for compatibility/cross-platformness, since no special software is needed for flashing. Annoying to automate though.  
-I do something like this:
-```bash
-cd $HOME/qmk_firmware
-./util/docker_build.sh bastardkb/charybdis/3x5/v2/splinky_3:rj || exit 1
-while ! grep -q -s "/run/media/$USER/RPI-RP2" /proc/mounts; do
-    sleep 1;
-done
-echo flashing
-cp ./bastardkb_charybdis_3x5_v2_splinky_3_rj.uf2 /run/media/$USER/RPI-RP2
-```
-The splinky auto-resets after it's done flashing.
-
 # Mozart Didn't Fit
 [Mozartkugeln](https://en.wikipedia.org/wiki/Mozartkugel) apparently are 30mm in diameter, not 34. 
 ![mozart](mozart.jpg)
