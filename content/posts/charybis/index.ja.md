@@ -22,28 +22,28 @@ tags:
 - やすっぽい[XDAプロファイルの「プリン」キーキャップ](https://www.amazon.co.jp/gp/product/B0BN5P62ML/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1)
 
 # 組み立て
-はんだ付け的にはほとんど大したことないけど、キットのリボンケーブルがかなり固いから見た目異性植物になってちょっと曲技的な付け方が必要になったりはする。
+はんだ付け的にはほとんど大したことないけど、キットのリボンケーブルがかなり固いから見た目異性植物になったり、ちょっと曲技的な付け方が必要になったりはする。
 ![weird tree](weird_tree.jpg)
 ([ハンズフリーツール](https://duckduckgo.com/?q=%E3%81%AF%E3%82%93%E3%81%A0%E4%BB%98%E3%81%91%E3%80%80%E3%83%8F%E3%83%B3%E3%82%BA%E3%83%95%E3%83%AA%E3%83%BC%E3%83%84%E3%83%BC%E3%83%AB&t=ffab&iar=images&iax=images&ia=images)の使用がおすすめ。
 
 ## 難しいところ１：スイッチのはんだ付け
 スイッチは基板をケースの内側に押し付けて曲げながら付けなければいけない。  
-基板はそのために平均より薄いもので確かに無事に曲がるけど、結局フレックス基板とか特別なものじゃなくてただの[FR4](https://ja.wikipedia.org/wiki/FR4)だからかなりの力を加える必要があって折れちゃいそうな感覚もする。折れないけど。  
-あとは僕の場合はその固さのせいでケースと基板の間に数ミリの隙間ができた。  
+基板はそのための平均より薄いもので、確かに無事に曲がるけど、結局フレックス基板とか特別なものじゃなくてただの[FR4](https://ja.wikipedia.org/wiki/FR4)だからかなりの力を加える必要があって折れちゃいそうな感覚もする。折れないけど。  
+あと僕の場合はその固さのせいでケースと基板の間に数ミリの隙間ができた。  
 
 光が漏れるのは残念だけどキーボードの操作の問題にはならない。
 ![gap](gap2.jpg)
 
 ## 難しいところ２：ケーブル
-ケーブルが幅広くて割と固いものでケースが狭いせいで、折ったりマイコンの足とかで怪我したりせずに全部入れるのはちょっとだけ面倒なことだ。  
-僕のはそうはならなかったけどケーブルが何かに接触しただけでゴーストキーが出まくりになったから足を全部切るのもとても大事みたいだ。
+ケーブルが幅広くて割と固いものでケースが狭いせいで、折ったりマイコンの足とかで怪我したりせずに全部入れるのはちょっとだけ面倒なこと。  
+僕のはそうはならなかったけどケーブルが何かに接触しただけでゴーストキーが出まくったから足を全部切るのもとても大事みたいだ。
 ![stuffing](stuffing.jpg)
 ![stuffing2](stuffing2.jpg)
 
 # QMK
 ファームウェアは定番の[QMK](https://qmk.fm/)。 
-僕のキーマップは[こちら](https://github.com/Rouji/Charybdis-QMK).  
-こんなキーの少ないキーボードの使い方とかはまだよくわからないし極めて個人的なものなのでマップそのもののコピペはおすすめできないけど、それ以外は参考になるかもしれない。
+僕のキーマップを[どうぞ](https://github.com/Rouji/Charybdis-QMK)。  
+こんなキーの少ないキーボードの使い方とかはまだよくわかっていないし極めて個人的なものなのでマップそのもののコピペはおすすめできないけど、参考になる部分もあると思う。
 
 ## 自動マウスレイヤー
 トラックボールを動かすと自動的にレイヤーを切り替えてくれる[auto_mouse_layer](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_pointing_device.md#automatic-mouse-layer-idpointing-device-auto-mouse)。
@@ -67,7 +67,7 @@ bool auto_mouse_activation(report_mouse_t mouse_report)
     return false;
 }
 ```
-マウスの動きとかには変化なし。
+マウスの動きには変化なし。
 
 ## トラックボールでスクロール
 トラックボールでスクロールするのは意外と素晴らしいことだ。操作的にはノートパソコンのタッチパッドに似てるけどより低遅延で精密だからスクロールするのがすごく気持ちいい。
@@ -76,11 +76,12 @@ QMKの[Drag Scroll](https://github.com/qmk/qmk_firmware/blob/master/docs/feature
 設定するのが簡単でなんのOSにも対応するけど、普通のマウスのホィールみたいな、一気に数列を飛ぶ全然スムーズじゃない働きになるからあまり好きじゃない。  
 スムーズにスクロールできるhigh-res scrolling、「高分解スクロール」っていう機能は未だに[イシュー](https://github.com/qmk/qmk_firmware/issues/17585)となってる。
 
-For linux users, libinput can be used to work around that, using its [on-button scrolling feature](https://wayland.freedesktop.org/libinput/doc/latest/scrolling.html#button-scrolling). This *does* do high-res scrolling, and thus feels *a lot* better. 
-It does however mean you need to configure this on all the PCs you use.  
-I personally have KC_MS_BTN4 (the 4th mouse button, aka "the back button") in my keymap, and tell libinput to use that as my scroll button.  
+Linuxではlibinputの[on-button scrolling feature](https://wayland.freedesktop.org/libinput/doc/latest/scrolling.html#button-scrolling) という機能は使ってるマウスに関わらずhigh-res scrollingに対応なので、それでもちゃんとスムーズにスクロールができる。
+使い心地全然違うから可能なら是非使ってみてください。
 
-Sway exposes this libinput feature and I have it configured like this:  
+ 個人的には、キーマップにKC_MS_BTN4（ブラウザとかで「戻る」ボタン）が入ってて、それをlibinputのスクロールボタンに設定している。
+
+Swayの設定では以下のようなもの  
 ```
 input "43256:6194:Bastard_Keyboards_Charybdis_Nano_(3x5)_Splinky_Mouse" {
     natural_scroll enabled
@@ -89,22 +90,8 @@ input "43256:6194:Bastard_Keyboards_Charybdis_Nano_(3x5)_Splinky_Mouse" {
     scroll_factor 0.3
 }
 ```
-To figure out what ID a button has, use `libinput debug-events`
+ボタンのIDは、`libinput debug-events`が教えてくれる。
 
-## コンパイルとフラッシュ
-After double-pressing the reset button, the splinky presents itself as a USB storage device, which you're supposed to copy your .uf2 firmware file to.  
-Slightly convoluted way of doing things, but it's nice for compatibility/cross-platformness, since no special software is needed for flashing. Annoying to automate though.  
-I do something like this:
-```bash
-cd $HOME/qmk_firmware
-./util/docker_build.sh bastardkb/charybdis/3x5/v2/splinky_3:rj || exit 1
-while ! grep -q -s "/run/media/$USER/RPI-RP2" /proc/mounts; do
-    sleep 1;
-done
-echo flashing
-cp ./bastardkb_charybdis_3x5_v2_splinky_3_rj.uf2 /run/media/$USER/RPI-RP2
-```
-フラッすが完成すると自動的に再起動して普通のキーボードモードに戻る。
 
 # モーツァルトさんは収まらない
 [Mozartkugel](https://en.wikipedia.org/wiki/Mozartkugel)は小さすぎてボールになってくれない
