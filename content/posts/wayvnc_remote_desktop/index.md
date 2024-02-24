@@ -1,6 +1,6 @@
 ---
 title: "Mimicking Windows RDP Behaviour on Linux"
-date: 2024-02-23T22:29Z
+date: 2024-02-23T22:29:00Z
 draft: false
 tags:
   - linux
