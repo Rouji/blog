@@ -1,7 +1,7 @@
 ---
 title: "Mimicking Windows RDP Behaviour on Linux"
 date: 2024-02-23T22:29:00Z
-draft: false
+draft: true
 tags:
   - linux
   - wayland
@@ -13,7 +13,7 @@ Lets you pick up a local session remotely, while keeping the local console locke
 VNC can give you access to a running session, but doesn't normally do those other two things.  
 
 I lug my work laptop back and forth between the office and my home office. The latter being my gaming PC setup at home, with its big nice monitor and mechanical keyboard etc.  
-I could use a [KVM](https://en.wikipedia.org/wiki/KVM_switch), but those are expensive for 4k and fiddly, so I went remote desktop instead. 
+I could use a [KVM](https://en.wikipedia.org/wiki/KVM_switch) to attach those to the laptop, but those are expensive for 4k and fiddly, so I went remote desktop instead. 
 And Windows' remote desktop would be perfect for this, but I'm a penguin. So I'm make do with what I've got. Which is VNC and hacky stuff. 
 
 # HEADLESS Outputs to the Rescue
