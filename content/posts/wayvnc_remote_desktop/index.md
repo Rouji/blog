@@ -1,7 +1,7 @@
 ---
 title: "Mimicking Windows RDP Behaviour on Linux"
 date: 2024-02-23T22:29:00Z
-draft: true
+draft: false
 tags:
   - linux
   - wayland
@@ -10,15 +10,13 @@ tags:
 
 Windows remote desktop is actually kind of neat.  
 Lets you pick up a local session remotely, while keeping the local console locked and even adapting to your remote display's dimensions.  
-VNC can give you access to a running session, but doesn't normally do those other two things.  
+VNC can give you access to a running Linux session, but doesn't normally do those other two things.  
 
-I lug my work laptop back and forth between the office and my home office. The latter being my gaming PC setup at home, with its big nice monitor and mechanical keyboard etc.  
-I could use a [KVM](https://en.wikipedia.org/wiki/KVM_switch) to attach those to the laptop, but those are expensive for 4k and fiddly, so I went remote desktop instead. 
-And Windows' remote desktop would be perfect for this, but I'm a penguin. So I'm make do with what I've got. Which is VNC and hacky stuff. 
+I have a big beefy desktop, but also like to work on my laptop. I also like continuing my big beefy desktop stuff just the way I left it. 
+Windows' remote desktop would be perfect for this, but I'm a penguin. So I'm make do with what I've got. Which is VNC and hacky stuff. 
 
 # HEADLESS Outputs to the Rescue
-[wlroots](https://gitlab.freedesktop.org/wlroots/wlroots)-based Wayland compositors (in my case, [Sway](https://swaywm.org/)) can make use of 
-a "virtual output" feature (sway calls them "headless"). 
+[wlroots](https://gitlab.freedesktop.org/wlroots/wlroots)-based Wayland compositors (in my case, [Sway](https://swaywm.org/)) can make use of a "virtual output" feature (sway calls them "headless"). 
 It lets you add outputs to a session, that get rendered and behave like any normal output, but lack a physical display to output to. 
 That includes all of your normal acceleration and 3D rendering and stuff. 
 
@@ -34,7 +32,7 @@ wayvnc -o HEADLESS-1 0.0.0.0
 ```
 And you now have an extra screen you can't see. But if you connect to that VNC server from another PC, you *can* see it there.  
 This is essentially something like Apple's [Sidecar](https://support.apple.com/en-us/102597), which is a pretty handy thing already. 
-Just get a VNC app for you tablet or whatever and have more screens!
+Just get a VNC app for your tablet or whatever and have more screens!
 
 ## "Locking" the Local Console
 The extended desktop is already pretty good, but if you can't see the remote PC's screen, you have at least one workspace there you can't really interact with. 
@@ -43,10 +41,10 @@ I mainly just want all the things moved to the VNC client's view.
 
 Turning off the physically attached outputs accomplishes that. 
 ```bash
-swaymsg output eDP-1 disable  # pretty typical for laptops
+swaymsg output DP-1 disable
 ```
 Congrats! For a manual solution, you're done.  
-Just remember to undo all of this before running off with the laptop that now doesn't output any video at all. 
+Just remember to undo all of this before turning off the laptop, because your desktop now doesn't output any video. 
 
 **NOTE:** This isn't secure, because input from local input devices still goes through. 
 
@@ -93,7 +91,7 @@ done
 
 # Automating it
 Already pretty good. SSH in, `start_wayvnc`, VNC in, do some work, `stop_wayvnc`, done.  
->But with Windows all you have to do is connect via RDP, zero setup!!
+>But with Windows all you have to do is connect via RDP, zero setup!
 
 Socket activation it is.
 
@@ -140,5 +138,3 @@ WantedBy=sockets.target
 - I use [TigerVNC Viewer](https://github.com/TigerVNC/tigervnc). Seemed the best in terms of image quality/speed/stability. Honourable mention: [wlvncc](https://github.com/any1/wlvncc)
 - You need some kind of ["passthrough" mode](https://github.com/any1/wayvnc/blob/5d55944dab7c395658f40fc4217146852447d513/wayvnc.scd?plain=1#L414), if you VNC into a sway session from a sway session.
 - You can do this on completely headless servers as well, for a kind of VDI solution, that can game. Use steam's streaming feature or something instead of VNC if you do want to game headless though. 
-
-
