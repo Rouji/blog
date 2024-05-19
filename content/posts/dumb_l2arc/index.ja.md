@@ -8,7 +8,7 @@ tags:
   - linux
 ---
 
-NASで[ZFSのraidz1](https://en.wikipedia.org/wiki/ZFS#RAID_(%22RAID-Z%22))を使ってるけど、読み取りの速度最大300~350MB/sで割と遅い。  
+NASで[ZFSのraidz1](https://en.wikipedia.org/wiki/ZFS#RAID_(%22RAID-Z%22))を使ってるけど、読み取り速度最大300~350MB/sで割と遅い。  
 そして10ギガのLANに繋がってる。  
 だからSSDのキャッシュ入れてそれを飽和できれば、と。  
 
