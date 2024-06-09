@@ -19,3 +19,7 @@ languages:
 
 params:
   defaultTheme: light
+  env: production
+  cover:
+    responsiveImages: true
+    linkFullImages: true

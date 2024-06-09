@@ -5,9 +5,9 @@ draft: false
 tags:
   - keyboard
   - build
+cover:
+  image: "cover.jpg"
 ---
-
-![cover](cover.jpg)
 
 # Parts
 - [Charybdis Nano Kit](https://bastardkb.com/product/charybdis-nano-kit/), with RGB and Trackball, without case

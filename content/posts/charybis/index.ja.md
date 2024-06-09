@@ -5,9 +5,9 @@ draft: false
 tags:
   - keyboard
   - build
+cover:
+  image: "cover.jpg"
 ---
-
-![cover](cover.jpg)
 
 カリブディス？  
 チャリブヂス？  

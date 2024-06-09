@@ -6,6 +6,9 @@ tags:
   - zfs
   - nas
   - linux
+cover:
+  image: "cover.png"
+  hiddenInSingle: true
 ---
 
 NASで[ZFSのraidz1](https://en.wikipedia.org/wiki/ZFS#RAID_(%22RAID-Z%22))を使ってるけど、読み取り速度最大300~350MB/sで割と遅い。  

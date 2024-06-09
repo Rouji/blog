@@ -6,6 +6,9 @@ tags:
   - zfs
   - nas
   - linux
+cover:
+  image: "cover.png"
+  hiddenInSingle: true
 ---
 
 I have a NAS.  
