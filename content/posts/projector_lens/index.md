@@ -17,12 +17,15 @@ After performing an autopsy and being sure that it [was now indeed dead](disembo
 Modeling an adapter wasn't super hard. It's mostly a tapered cylinder with an [MFT](https://en.wikipedia.org/wiki/Micro_Four_Thirds_system) mount bit on one end, a few holes cut out for sticky outy bits of the lens, and ... lugs.  
 
 I completely eyeballed the length of the adapter (focal length?) from looking at how far away the LCDs in the projector were, and a few iterations of millimetre-guessing and re-printing.  
-Science. 
+Science.  
+
+You can get the Model here: [Blender project](projector_lens_adapter.blend), [STL](projector_lens_adapter.stl)  
+Or [on printables](https://www.printables.com/model/1154597-sony-vpl-fh36-projector-lens-to-micro-four-thirds).  
 
 ![3d model in blender](blender.png)
 ![3d-printed model on printer bed](adapter.jpg)
 
-Painting the inside matte black [kills internal reflections]({{< ref "/posts/felt_tubes" >}}).  
+Painting the inside matte black [kills internal reflections]({}).  
 
 As are the lugs.  
 I was too lazy to figure out a good mounting system, so: lugs.
