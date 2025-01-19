@@ -26,7 +26,7 @@ Or [on printables](https://www.printables.com/model/1154597-sony-vpl-fh36-projec
 
 ![3d-printed model on printer bed](adapter.jpg)
 
-Painting the inside matte black [is very important]({}).  
+Painting the inside matte black [is very important]({{< ref "/posts/felt_tubes" >}}).  
 
 As are the lugs.  
 I was too lazy to figure out a good mounting system, so: lugs.
