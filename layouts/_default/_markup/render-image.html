@@ -1,18 +1,45 @@
-{{ $image := .Page.Resources.GetMatch .Destination }}
+{{- $image := .Page.Resources.GetMatch .Destination -}}
 
-{{ $small_jpg := $image.Resize "800x q80 jpeg" }}
-{{ $small_webp := $image.Resize "800x q80 webp" }}
-{{ $medium_jpg := $image.Resize "1200x q80 jpeg" }}
-{{ $medium_webp := $image.Resize "1200x q80 webp" }}
-{{ $large_webp := $image.Resize "1500x q80 webp" }}
+{{- $small_jpg := $image.Resize "800x q80 jpeg" -}}
+{{- $small_webp := $image.Resize "800x q80 webp" -}}
+{{- $medium_jpg := $image.Resize "1200x q80 jpeg" -}}
+{{- $medium_webp := $image.Resize "1200x q80 webp" -}}
+{{- $large_webp := $image.Resize "1500x q80 webp" -}}
+{{- $large_jpg := $image.Resize "1500x q80 jpeg" -}}
 
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $src = .RelPermalink -}}
+    {{- with $u.RawQuery -}}
+      {{- $src = printf "%s?%s" $src . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $src = printf "%s#%s" $src . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 <p>
-<a href={{ .Destination | safeURL }}>
+<a href={{ $src }}>
 <picture>
-    <source type="image/webp" srcset="{{ $small_webp.RelPermalink | safeURL }} 500w, {{ $medium_webp.RelPermalink | safeURL }} 800w, {{ $large_webp.RelPermalink | safeURL }} 1200w" />
-    <source type="image/jpeg" srcset="{{ $small_jpg.RelPermalink | safeURL }} 500w, {{ $medium_jpg.RelPermalink | safeURL }} 800w" />
-  <img src="{{ $small_jpg.RelPermalink | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" style="width:auto;">
+    <source type="image/webp"
+        srcset="
+            {{ $small_webp.RelPermalink | safeURL }} 500w,
+            {{ $medium_webp.RelPermalink | safeURL }} 800w,
+            {{ $large_webp.RelPermalink | safeURL }} 1200w
+        "
+    />
+    <source type="image/jpeg"
+        srcset="
+            {{ $small_jpg.RelPermalink | safeURL }} 500w,
+            {{ $medium_jpg.RelPermalink | safeURL }} 800w
+            {{ $large_jpg.RelPermalink | safeURL }} 1200w
+        "
+    />
+    <img src="{{ $small_jpg.RelPermalink | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" style="width:auto;">
 </picture>
 </a>
 </p>
