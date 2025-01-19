@@ -27,5 +27,3 @@ Steck ihn in deinen Ring
 Und mach stattdessen solche Fotos 
 
 ![Docht nach Filz](wick_after.jpg)
-
-Ende der Durchsage.

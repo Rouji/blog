@@ -27,5 +27,3 @@ Stick in the tubes
 And take pictures like this instead
 
 ![Wick after felt](wick_after.jpg)
-
-That is all.

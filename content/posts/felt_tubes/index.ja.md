@@ -27,5 +27,3 @@ cover:
 代わりにこういう写真を撮るがいい
 
 ![Wick after felt](wick_after.jpg)
-
-以上
