@@ -8,14 +8,26 @@ languages:
   en:
     languageName: English
     weight: 1
+    params:
+      homeInfoParams:
+        Title: Hello!
+        Content: This be a blog.
 
   ja:
     languageName: 日本語
     weight: 2
+    params:
+      homeInfoParams:
+        Title: こんちわ
+        Content: これブログね。
 
   de:
     languageName: Deutsch
     weight: 3
+    params:
+      homeInfoParams:
+        Title: Hallo!
+        Content: Das hier n Blog.
 
 params:
   defaultTheme: light
@@ -23,3 +35,23 @@ params:
   cover:
     responsiveImages: true
     linkFullImages: true
+  socialIcons:
+    - name: github
+      title: Github
+      url: "https://github.com/Rouji"
+    - name: Misskey
+      title: Misskey
+      url: "https://misskey.io/@marupan"
+    - name: Soundcloud
+      title: Soundcloud
+      url: "https://soundcloud.com/rouji"
+    - name: Matrix
+      title: Message me on Matrix
+      url: "https://matrix.to/#/@a:r0.at"
+    - name: Youtube
+      title: Look at bad videos
+      url: "https://www.youtube.com/@abunchofmusic8903/videos"
+  editPost:
+    URL: "https://github.com/Rouji/blog/edit/master/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
