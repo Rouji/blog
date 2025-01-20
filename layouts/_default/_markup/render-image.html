@@ -39,7 +39,7 @@
             {{ $large_jpg.RelPermalink | safeURL }} 1200w
         "
     />
-    <img src="{{ $small_jpg.RelPermalink | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" style="width:auto;">
+    <img src="{{ $small_jpg.RelPermalink | safeURL }}" alt="{{ .Title }}" title="{{ .Title }}" style="width:auto;" loading="lazy">
 </picture>
 </a>
 </p>
