@@ -16,7 +16,7 @@ BOM:
 - [USB-C PD board](https://de.aliexpress.com/item/1005007227510089.html): 15€
 
 Also needed:
-- 3D printer and some PLA
+- 3D printer and some filament (PLA is fine)
 - soldering iron
 - hot glue gun
 - fire extinguisher
@@ -28,7 +28,7 @@ Also needed:
 
 Available on AliExpress and Ebay and probably other chinesium outlets. 
 Listings come and go, but searches for "usb-pd 100W power bank pcb" or some such should do the trick. 
-There are a few versions for different battery pack configurations.  
+There are a few versions for different battery pack configurations.[^allthesame]  
 
 I got the 5S one, since 5 18650s in **s**eries gets you pretty close to the 20V, that 100W USB-PD requires. 
 And less voltage difference means more efficient DC-DC conversion. I think.  
@@ -39,6 +39,9 @@ You don't get any in your package, and depending on the online listing there mig
 There are a few things configurable via resistors/jumpers, which are fortunately all mostly irrelevant for this build. 
 
 ![pcb underside](pcb_underside.jpg)
+
+
+[^allthesame]: I *think* they're all the same PCB, just with different resistors pre-installed. Don't quote me on that though.
 
 ## Capacity Setting
 
@@ -118,7 +121,6 @@ Again, probably don't need to touch this, but just in case you want to:
 > | 3.6KΩ[^slowcharge3] | -10°C | 55°C | -20°C | 60°C |
 
 [^slowcharge1]: this actually says: `-10°C <- 0.2°charge -> 0°C <- normal charge -> 45°C <- -0.1v*N -> 55°C` and I'm not sure what that means.
-
 [^slowcharge2]: `2°C <- 0.1°C -> 17°C <- normal charge -> 43°C` even less sure about this one.
 [^slowcharge3]: `-10°C <- 0.2°charge -> 0°C <- normal charge -> 45°C <- 0.2°charge -> 55°C` idk man.
 
@@ -142,9 +144,53 @@ Putting a proper BMS between this PCB and the cells seems to be a supported conf
 I haven't found one I like yet, but will add one when I do.
 
 # The Battery Pack
-- rect vs honeycomb
-- wiring
 
-- [18650 holder openscad](18650_holder.scad) (I can't for the life of me find the original source, very sorry :/)
+Pretty basic, square-ish 5S4P pack in the bottom.  
+Pretty fiddly, bodgy PCB case in the top.  
+
+## The Bottom
+
+Originally, I had those Lego-like square interlocking things, but was unhappy how they wasted a lot of space, and had sticky-outy bits along 2 edges I'd need to cut off and/or design around.  
+I found [an 18650 holder openscad script](18650_holder.scad)[^scadsource] online, that can do honeycomb layouts, and liked that much better. 
+Less wasted space, more interesting shape, and easier to design around since it's a thing I printed myself.  
+
+![square vs honeycomb](square_honey.jpg)
+Ok it doesn't save *that* much space, but it's still cool. 
+
+After undoing the old pack and redoing it with the honeycomb, I had this (+ case test fit):
+![nickel-stripped cells in bottom case](cells_in_bottom.jpg)
+
+**Note**: Yes I soldered the nickel strips onto the cells. I know that's "dangerous" and you should spot weld them instead. I don't have a spot welder. Please forgive me. 
+
+# Wiring
+Wiring is pretty straightforward.  
+Here's a professional CAD drawing:  
+![professional CAD drawing](cad_drawing.png)
+
+
+# (Not) Unlimited Power!!
+![charge](charge.jpg)
+Eats about 210Wh when charging at 20V 100W.
+
+![discharge](discharge.jpg)
+Spits out about 180Wh when discharging at 20V 100W.  
+Also gets pretty warm while doing so, so that makes sense.  
+
+One thing to be aware of: It doesn't actually manage 100W all the way down to 0%. 
+At around 20~30% it starts cutting out if you try drawing 100W, and only goes up to 60W-ish.
+
+
+# Gimme The Files
+
+I exported the openscad script to STLs, imported them into Blender, and then modeled around that.  
+There were of course no dimensions for the PCB, so I measured/trial-error-eyeballed those.  
+
+[OpenSCAD 18650 holder script](18650_holder.scad)[^scadsource]  
+[Exported 18650 holder STL](18650_holder.stl)  
+[Case Blender file](powerbank.blend)  
+[Case Bottom STL](bottom.stl)  
+[Case Top STL](top.stl)
+
+[^scadsource]: Can't for the life of me find the original source. Very sorry :(
 
 [^cell-price]: Rough current price; I had mine left over from a project years ago.
