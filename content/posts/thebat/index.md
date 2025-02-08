@@ -1,19 +1,20 @@
 ---
 title: "200Wh, 100W USB-C PD Power Bank"
 date: 2025-02-02T19:00:00Z
-draft: true
+draft: false
 tags:
   - Unintentional Explosives
 cover:
   image: "cover.jpg"
 ---
 
+
 I built a ~200Wh, 100W USB-C PD power bank from 18650 cells I had lying around, and a cheap PCB from AliExpress.
 
 BOM:
-- 20x 18650 cells: 50€-ish[^cell-price]
-- [Nickel strip](https://de.aliexpress.com/item/4000506372982.html): 1€
 - [USB-C PD board](https://de.aliexpress.com/item/1005007227510089.html): 15€
+- 20x 18650 cells: 50€-ish[^cell-price]
+- Nickel strip: ~1€
 
 Also needed:
 - 3D printer and some filament (PLA is fine)
@@ -143,14 +144,14 @@ So the connections going between the series connections are purely for protectio
 Putting a proper BMS between this PCB and the cells seems to be a supported configuration, and might be a good idea. 
 I haven't found one I like yet, but will add one when I do.
 
-# The Battery Pack
+# The Buildening
 
 Pretty basic, square-ish 5S4P pack in the bottom.  
 Pretty fiddly, bodgy PCB case in the top.  
 
 ## The Bottom
 
-Originally, I had those Lego-like square interlocking things, but was unhappy how they wasted a lot of space, and had sticky-outy bits along 2 edges I'd need to cut off and/or design around.  
+Originally, I had those Lego-like square interlocking 18650 holder things, but was unhappy how they wasted a lot of space, and had sticky-outy bits along 2 edges I'd need to cut off and/or design around.  
 I found [an 18650 holder openscad script](18650_holder.scad)[^scadsource] online, that can do honeycomb layouts, and liked that much better. 
 Less wasted space, more interesting shape, and easier to design around since it's a thing I printed myself.  
 
@@ -162,34 +163,94 @@ After undoing the old pack and redoing it with the honeycomb, I had this (+ case
 
 **Note**: Yes I soldered the nickel strips onto the cells. I know that's "dangerous" and you should spot weld them instead. I don't have a spot welder. Please forgive me. 
 
+## The Top
+
+PCB came with no dimensions at all. Much eyeballing and tongue angleing was involved.
+
+![ports fit nicely into top case](portholes.jpg)
+
+Getting the ports right was fun.[^fun]  
+
+I couldn't figure out a good way to mount the PDB (no mounting holes or anything, so I went for a kind of friction fit. 
+
+![pcb in top case](top_friction_fit.jpg)
+
+...which does work, but doesn't like USB cables being shoved in the wrong way round with force. Add glue.  
+
+The empty space is also just enough to shove in the slack of all the wires between the PCB and the cells. Especially with connectors in-between, those take up a lot of space.
+
+[^fun]: Not
+
 # Wiring
 Wiring is pretty straightforward.  
 Here's a professional CAD drawing:  
 ![professional CAD drawing](cad_drawing.png)
 
+Adding connectors for all the wires is a very good idea. 
+Soldering the live connections is a good way of shorting things out. 
+Ask me how I know. 
 
-# (Not) Unlimited Power!!
+![gore](open_guts.jpg)
+
+I didn't have any fitting 4-pin connector for the sensing connections, so I made do with these breadboardy jumper wire things.  
+Also added insulation. Shouldn't technically be necessary, but can't hurt.  
+(Also note the added hot snot 😅)
+
+
+# Glueing the Halves Together
+
+Couldn't come up with a good/easy way of adding screws or something.  
+Literally just hot glued them together lol. 
+
+![glued together](layer_lines_man.jpg)
+
+The top has a bit of a lip, so it locates into the bottom pretty well. Also gives it a good surface for gluing.  
+
+In a pinch you can still heat it up juuust enough for only the glue to soften and pull it apart without damage. 
+
+# (Not Quite) Unlimited Power!!
+
+These cells were (I think) 2800mAh when new.  
+That means in a perfect world, I'd get `20 × 2.8Ah × 3.7V = 207.2Wh` out of this.  
+
+In reality:
+
 ![charge](charge.jpg)
-Eats about 210Wh when charging at 20V 100W.
+It eats about 210Wh when charging at 20V 100W.
 
 ![discharge](discharge.jpg)
-Spits out about 180Wh when discharging at 20V 100W.  
-Also gets pretty warm while doing so, so that makes sense.  
+And spits out about 180Wh when discharging at 20V 100W.  
 
-One thing to be aware of: It doesn't actually manage 100W all the way down to 0%. 
-At around 20~30% it starts cutting out if you try drawing 100W, and only goes up to 60W-ish.
+Only 12% off the 207.2Wh. Not bad!
+
+I haven't tested it, but I suspect the ports and modes that output less than 20V to be a bit less efficient.  
+
+One thing note: It doesn't actually manage 100W all the way down to 0%. 
+At around 30~20% it starts cutting out if you try drawing a full 100W, and only stays stable below ~70W.
+
+
+# Done!
+
+That's it!  
+Here's a peel. 
+
+
+{{< video "peel.webm" >}}
+
 
 
 # Gimme The Files
 
-I exported the openscad script to STLs, imported them into Blender, and then modeled around that.  
-There were of course no dimensions for the PCB, so I measured/trial-error-eyeballed those.  
+This is the part where you find out I did this very badly in Blender because I still can't wrap my brain around FreeCAD.  
+I'm sorry.  
 
 [OpenSCAD 18650 holder script](18650_holder.scad)[^scadsource]  
 [Exported 18650 holder STL](18650_holder.stl)  
 [Case Blender file](powerbank.blend)  
 [Case Bottom STL](bottom.stl)  
 [Case Top STL](top.stl)
+
+Might need to print some things at somewhere between 100%~105% to fit into each other properly. 
 
 [^scadsource]: Can't for the life of me find the original source. Very sorry :(
 

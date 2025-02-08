@@ -1,0 +1,5 @@
+{{- $path := .Get 0 -}}
+<video controls preload="none" poster="{{ $path }}.jpg" width="100%">
+  <source src="{{ $path }}" type="video/webm">
+  Your browser does not support the video tag. 
+</video>
