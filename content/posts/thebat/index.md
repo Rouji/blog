@@ -3,6 +3,8 @@ title: "200Wh, 100W USB-C PD Power Bank"
 date: 2025-02-02T19:00:00Z
 draft: false
 tags:
+  - 3D Printing
+  - build
   - Unintentional Explosives
 cover:
   image: "cover.jpg"
