@@ -27,7 +27,7 @@ Also needed:
 # The PCB
 ![pcb](pcb.jpg)
 
-Available on AliExpress and Ebay and probably other chinesium outlets. 
+Available on AliExpress and eBay and probably other chinesium outlets. 
 Listings come and go, but searches for "usb-pd 100W power bank pcb" or some such should do the trick. 
 There are a few versions for different battery pack configurations.[^allthesame]  
 
@@ -170,8 +170,9 @@ PCB came with no dimensions at all. Much eyeballing and tongue angleing was invo
 ![ports fit nicely into top case](portholes.jpg)
 
 Getting the ports right was fun.[^fun]  
+Also very fiddly, fitting in the ports through the front and the display through the top simultaneously. 
 
-I couldn't figure out a good way to mount the PDB (no mounting holes or anything, so I went for a kind of friction fit. 
+I couldn't figure out a good way to mount the PCB (no mounting holes or anything, so I went for a kind of friction fit. 
 
 ![pcb in top case](top_friction_fit.jpg)
 
@@ -197,7 +198,7 @@ Also added insulation. Shouldn't technically be necessary, but can't hurt.
 (Also note the added hot snot 😅)
 
 
-# Glueing the Halves Together
+# Gluing the Halves Together
 
 Couldn't come up with a good/easy way of adding screws or something.  
 Literally just hot glued them together lol. 
@@ -225,7 +226,7 @@ Only 12% off the 207.2Wh. Not bad!
 
 I haven't tested it, but I suspect the ports and modes that output less than 20V to be a bit less efficient.  
 
-One thing note: It doesn't actually manage 100W all the way down to 0%. 
+One thing to note: It doesn't actually manage 100W all the way down to 0%. 
 At around 30~20% it starts cutting out if you try drawing a full 100W, and only stays stable below ~70W.
 
 
