@@ -1,5 +1,5 @@
 ---
-title: "Projector Objektiv auf Kamera"
+title: "Projektor Objektiv auf Kamera"
 date: 2024-07-01T17:06:00Z
 draft: false
 tags:
