@@ -227,7 +227,7 @@ Und spuckt so um die 180Wh aus, wenn's mit 20V 100W entlädt.
 
 Nur 12% weniger als die 207.2Wh. Nicht schlecht!
 
-Hab's nicht ausprobiert, aber ich schätze mal, die Anschlüsse und Modi, die weniger als 20V ausspucken, sind ein bisschen weniger effizient.  
+Hab's nicht ausprobiert, aber ich schätze mal, die Ports und Modi, die weniger als 20V ausspucken, sind ein bisschen weniger effizient.  
 
 Nennenswert: Es schafft die 100W nicht bis 0% runter. 
 Bei so 30~20% fängt's an sich spontan abzuschalten und schafft dann stabil nur mehr so ~70W. 
