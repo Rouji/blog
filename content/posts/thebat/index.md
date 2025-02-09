@@ -174,7 +174,7 @@ PCB came with no dimensions at all. Much eyeballing and tongue angleing was invo
 Getting the ports right was fun.[^fun]  
 Also very fiddly, fitting in the ports through the front and the display through the top simultaneously. 
 
-I couldn't figure out a good way to mount the PCB (no mounting holes or anything, so I went for a kind of friction fit. 
+I couldn't figure out a good way to mount the PCB (no mounting holes or anything), so I went for a kind of friction fit. 
 
 ![pcb in top case](top_friction_fit.jpg)
 
