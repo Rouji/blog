@@ -15,7 +15,7 @@ NASで[ZFSのraidz1](https://en.wikipedia.org/wiki/ZFS#RAID_(%22RAID-Z%22))を�
 そして10ギガのLANに繋がってる。  
 だからSSDのキャッシュ入れてそれを飽和できれば、と。  
 
-SSD入れて、`zpool add zfs cache/dev/nvme0n1p1`[^shortstroke]実行して、ファイル読んだらモニタリングでキャッシュ使用量が上がってるの見たからワクワクしだしたが、*スピード1ミリも速くならなかった*
+SSD入れて、`zpool add zfs cache/dev/nvme0n1p1`[^shortstroke]実行して、ファイル読んだらモニタリングでキャッシュ使用量が上がってるの見たからワクワクしだしたが、*スピードは1ミリも速くならなかった*
 
 ```bash
 # pv test.dat >/dev/null

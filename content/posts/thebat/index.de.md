@@ -64,7 +64,7 @@ Doku JPEG sagt:
 > Example: 8000 ÷ 0.8 = 10000 -> 8000mAh = 10KΩ
 
 Der eingebaute Widerstand hat `10C` draufstehen, was 12.4KΩ heißt. 
-Für meine ~2800mAh Zellen sollte es `(4 × 2800) ÷ 0.8 = 11200 ÷ 0.8 = 14000Ω` sein, aber ich glaub 12.4KΩ ist nah genug. Und ich hab eh keine SMD Widerstände.  
+Für meine ~2800mAh Zellen sollte es `(4 × 2800) ÷ 0.8 = 11200 ÷ 0.8 = 14000Ω` sein, aber ich glaub 12.4KΩ ist nah genug dran. Und ich hab eh keine SMD Widerstände.  
 Das beeinflusst angeblich eh nur die Prozentanzeige auf dem Display, also kann man's im Zweifelsfall vermutlich auch komplett ignorieren.
 
 
