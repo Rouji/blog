@@ -108,26 +108,6 @@ Eingebaut sind 27KΩ, was 4.2V entspricht und schon richtig für diese Zellen i
 > | 3.6KΩ | 3.65V lithium ion phosphate |
 {{< /details >}}
 
-## Über-/Untertemperaturschutz
-
-**R36** stellt die Temperaturgrenzen fürs Laden und Entladen ein.
-Auch das muss man vermutlich nicht anfassen, aber falls doch:
-
-{{< details summary="Wertetabelle" >}}
-> | R36 | min. charge temp | max. charge temp | min. discharge temp | max. discharge temp |
-> |-----|-------------------|-------------------|----------------------|----------------------|
-> | 27KΩ | 0°C | 45°C | -20°C | 60°C |
-> | 18KΩ | 2°C | 43°C | -10°C | 55°C |
-> | 13KΩ | 0°C | 45°C | -10°C | 55°C |
-> | 9.1KΩ[^slowcharge1] | -10°C | 55°C | -20°C | 55°C |
-> | 6.2KΩ[^slowcharge2] | 0°C | 45°C | -20°C | 60°C |
-> | 3.6KΩ[^slowcharge3] | -10°C | 55°C | -20°C | 60°C |
-
-[^slowcharge1]: Hier steht genau: `-10°C <- 0.2°charge -> 0°C <- normal charge -> 45°C <- -0.1v*N -> 55°C` und ich bin mir nicht so ganz sicher was das heißen soll.
-[^slowcharge2]: `2°C <- 0.1°C -> 17°C <- normal charge -> 43°C` noch weniger Ahnung.
-[^slowcharge3]: `-10°C <- 0.2°charge -> 0°C <- normal charge -> 45°C <- 0.2°charge -> 55°C` weiß nicht, man.
-
-{{</ details >}}
 
 ## Ports Sind Nicht Gleichberechtigt
 
