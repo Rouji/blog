@@ -60,7 +60,7 @@ I couldn't figure out what springs I would need to buy, or where to buy them, so
 ![choc switches innards comparison](innards.jpg)
 
 The normal Choc springs *are* quite a bit longer than the Choc Mini ones, but they do fit, and don't fully compress before the switch bottoms out.  But *just barely*.  
-This does mean, that the switch ends up feeling heavier than the normal Choc blue/ping low force switches, but not by much and they're still *a lot* lighter than the stock Choc Mini 50g springs.  
+This does mean, that the switch ends up feeling heavier than the normal Choc blue/pink low force switches, but not by much and they're still *a lot* lighter than the stock Choc Mini 50g springs.  
 
 The actual swapping of the springs isn't hard, just time consuming. 
 ![disassembled switches](switches_disassembled.jpg)
@@ -140,7 +140,7 @@ Mmh, ergonomics.
 - 3D printer for the PCB-MagSafe shim
 
 [^minorder]: only need 2 but JLCPCB has a minimum order of 5
-[^nnnockoff]: a.k.a. nice!nano knockoffs
+[^nnnockoff]: a.k.a. [nice!nano](https://nicekeyboards.com/nice-nano/) knockoffs
 
 # Source
 KiCAD project and gerber files are available in the [Minifi Git Repo](https://github.com/Rouji/minifi)
