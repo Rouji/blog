@@ -10,7 +10,8 @@ cover:
   image: "keyboard_finished.jpg"
 ---
 
-I have a [chocofi](https://github.com/pashutk/chocofi), and really like it.  
+I have a [Chocofi](https://github.com/pashutk/chocofi), and really like it.  
+
 At some point I saw they make *even lower* profile "Choc Mini" switches, decided to try and stuff those into a Chocofi, and ended up with this project.  
 
 
@@ -28,22 +29,22 @@ The normal Chocs are already low profile (for mechanical switch proportions), bu
 
 
 Overall it's 3.8mm of difference. Which sounds small, but if your overall height is only 12mm, that's almost 32%!  
-And putting the switch itself through the PCB is just kinda cool.  
+And *sticking the switch body itself through the PCB* is just kinda cool.  
 
 
 # PCB Rejiggering
 ![KiCAD screenshot](kicad_whole.png)
 Since the Choc Minis have a big chunk of their main body sticking through the PCB, and their feet are placed differently, I had to redo a few things on the PCB.  
 
-There was a footprint for Choc Minis in a library, but not a reversible one. But mirroring the through-holes and wiring them up was easy enough. 
+There were footprints for Choc Minis some library, but no reversible one. But mirroring the through-holes and wiring them up was easy enough. 
 But then, thanks to the different pin placement and the giant holes necessary for the switch body, all of the switch matrix had to be rerouted.  
-Not hard, just takes time. A surprisingly relaxing game of connect the dots, actually. 
+Not hard, just took time. A surprisingly relaxing game of connect the dots, actually. 
 
 ## Diodes, ugh
 Since the goal was to be low-profile, through-hole diodes, as it turns out, are a no-go.  
 With the diode placement as-is on the Chocofi, there were a few problems:
 ![through hole diode on bottom](throughhole_on_bottom.jpg)
-On the bottom, the diode body sticks out a good bit further than the switch body and feet → NG
+On the bottom, the diode body sticks out a good bit further than the switch body and feet → NG  
 
 ![through hole diode on top](throughhole_on_top.jpg)
 And on top, it obviously collides with the switch itself → also NG  
@@ -51,24 +52,26 @@ And on top, it obviously collides with the switch itself → also NG
 There was the option of using smaller SMD diodes on the bottom, but I didn't like the idea of those scraping against things and possibly getting knocked off.  
 So I revised the PCB layout a bit, and put the diodes in the switch's LED hole.  
 ![diode in switch hole](diode_in_hole.jpg)
-The holes for through-hole diodes had to go, and to still have to top and bottom layers connected, I used the two extra feet of the switches, that are otherwise unconnected. And felt really smart about it.
+The holes for through-hole diodes had to go, too. And to still have to top and bottom layers connected, I used the two extra feet of the switches, that are otherwise unconnected. Could've just put in vias, but doing it this way made me feel very smart. 
 
 # Spring Swap
-I personally like my low profile switches as low force as possible, but the Choc Mini are only available in ~50g linear and tactile variants.  
+I personally like my low profile switches as low force as possible, but the Choc Mini are only available in ~50g linear and tactile variants.[^clicky]  
 I couldn't figure out what springs I would need to buy, or where to buy them, so I took a gamble and bought normal Choc blue switches in the hope they would fit and work.  
+
+[^clicky]: Apparently there are/were also clicky ones(?), but I haven't seen those for sale anywhere.
 
 ![choc switches innards comparison](innards.jpg)
 
 The normal Choc springs *are* quite a bit longer than the Choc Mini ones, but they do fit, and don't fully compress before the switch bottoms out.  But *just barely*.  
 This does mean, that the switch ends up feeling heavier than the normal Choc blue/pink low force switches, but not by much and they're still *a lot* lighter than the stock Choc Mini 50g springs.  
 
-The actual swapping of the springs isn't hard, just time consuming. 
+The actual swapping of the springs wasn't hard, just time consuming. 
 ![disassembled switches](switches_disassembled.jpg)
-Take all of them apart, and then put them back together while *accidentally* mixing up the springs. 
-And 2h later you're done!
+Took all of them apart, and then put them back together while using the *wrong* springs.  
+And 2h later I had low-force Choc Minis!
 
 # Result
-Putting all the parts together isn't anything special, just your normal keyboard soldering session and that's it.  
+Putting all the parts together wasn't anything special, just your normal keyboard soldering session.  
 But was it worth it? Well ...
 
 ![height comparison](height_comparison.jpg)
@@ -76,7 +79,7 @@ But was it worth it? Well ...
 
 It *is* shorter than my Chocofi. By 4mm.  
 So about 27%.  
-More than 1/4 shorter overall, which isn't bad at all, I think!  
+More than 1/4 shorter overall. Not bad!  
 
 I don't think anyone would ever notice the difference just looking at it from the top.  
 It's not built into anything that requires as-low-as-possible action either.  
@@ -84,7 +87,7 @@ But *I know* because *I made it*. And that's reason enough to merit its existenc
 
 # Non-Slip Life Hack
 I always found it hard finding good/cheap rubber feet for keyboards like this.  
-But it turns out you can just take a cheap mousepad, stick double-sided sticky tape on it, and easily make very slip-resistant, thin, perfectly shaped rubber feet for basically free. 
+But it turns out you can just take a cheap mouse pad, stick double-sided sticky tape on it, and easily make very slip-resistant, thin, perfectly shaped rubber feet for basically free. 
 
 ![mousepad-based feet](mousepad_feet.jpg)
 
@@ -95,31 +98,33 @@ And it makes a lot of sense too. MagSafe being magnet-based means it's easy to a
 
 So I had a go at it too. 
 
-I got myself some basic, [cheap MagSafe-tripod adapters and camera mounting clamp thingies](#magsafe-bom).  
+I got myself some basic, cheap MagSafe-tripod adapters and camera mounting clamp thingies (see [BoM](#magsafe-bom)).  
 Nothing too special. But making the metal ring not add height to the keyboard was a bit tricky.  
 
-My mousepad-based rubber feet are ~2mm thick, the switches poke out about 0.8mm, and the ring also just below 1mm.  
+My mouse pad-based rubber feet are ~2mm thick, the switches poke out about 0.8mm, and the ring also just below 1mm.  
 And the rubber feet need to protrude a bit to still offer some grip. Not a lot of wiggle room.  
 
 The sticky tape on the ring was not going to stick well to just the small bits of switch sticking out, and I didn't want to use big globs of glue or something like that either.  
 
 So I made an overly specific shim, by modeling a flat ring and punching the same holes into it as the PCB:
 ![shim in blender](ring_blender.png)
-Easy to do in just Blender, by exporting an STL from KiCAD, importing that and using a boolean operator on it.  
+Easy to do in Blender, by exporting an STL from KiCAD, importing that and just `boolean modifier`ing it to the ring.  
 
 Printed it, and got a perfectly fitting shim. 
 ![printed shim in place](ring_on_pcb.jpg)
-So satisfying.  
+Very satisfying.  
 
-This was at ~0.8mm thickness, so it fills in to just exactly the height all the switch bits were.  
-Then just stuck the ring on. 
+This was at ~0.8mm thickness, so it filled in to just exactly the height all the switch bits were.  
 
 ![MagSafe ring installed](ring_installed.jpg)
 
-Got away with it with a few hairs worth of clearance.
+Then just stuck the ring on. 
+
 ![MagSafe VS rubber feet clearance](magsafe_vs_feet.jpg)
 
-And it all works!  
+Got away with it with a few hairs worth of clearance.
+
+... And it all works!  
 The rubber feet anti-slippage is unhindered, the height not increased, *and* I can now do this:
 
 ![magsafe-mounted keyboard](desk_mounted.jpg)
