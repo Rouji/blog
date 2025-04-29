@@ -10,7 +10,7 @@ cover:
   image: "keyboard_finished.jpg"
 ---
 
-I have a [Chocofi](https://github.com/pashutk/chocofi), and really like it.  
+I have a ["Choc"](https://www.kailhswitch.com/info/kailh-choc-switch-41232795.html) based, low profile keyboard called [Chocofi](https://github.com/pashutk/chocofi) and really like it.  
 
 At some point I saw they make *even lower* profile "Choc Mini" switches, decided to try and stuff those into a Chocofi, and ended up with this project.  
 
@@ -38,7 +38,7 @@ Since the Choc Minis have a big chunk of their main body sticking through the PC
 
 There were footprints for Choc Minis some library, but no reversible one. But mirroring the through-holes and wiring them up was easy enough. 
 But then, thanks to the different pin placement and the giant holes necessary for the switch body, all of the switch matrix had to be rerouted.  
-Not hard, just took time. A surprisingly relaxing game of connect the dots, actually. 
+A surprisingly relaxing game of connect the dots, actually. 
 
 ## Diodes, ugh
 Since the goal was to be low-profile, through-hole diodes, as it turns out, are a no-go.  
@@ -65,7 +65,6 @@ I couldn't figure out what springs I would need to buy, or where to buy them, so
 The normal Choc springs *are* quite a bit longer than the Choc Mini ones, but they do fit, and don't fully compress before the switch bottoms out.  But *just barely*.  
 This does mean, that the switch ends up feeling heavier than the normal Choc blue/pink low force switches, but not by much and they're still *a lot* lighter than the stock Choc Mini 50g springs.  
 
-The actual swapping of the springs wasn't hard, just time consuming. 
 ![disassembled switches](switches_disassembled.jpg)
 Took all of them apart, and then put them back together while using the *wrong* springs.  
 And 2h later I had low-force Choc Minis!
