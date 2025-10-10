@@ -49,7 +49,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 
 # Sieben Sachen
 
-{{< columns >}}
+{{% columns %}}
 **Torte:**
 - Butter 140g
 - Staubzucker 160g
@@ -75,7 +75,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 - Ofen
 - Zeit
 - Schlagobers nicht vergessen
-{{< /columns >}}
+{{% /columns %}}
 
 [^choco]: Kochschokolade, wenn es eine gibt. Aber vermutlich alles ab ca. 50% Kakao gut.
 

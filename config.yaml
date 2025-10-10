@@ -3,6 +3,11 @@ languageCode: 'en-us'
 title: 'Wurstkäse'
 theme: 'PaperMod'
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 defaultContentLanguage: en
 languages:
   en:

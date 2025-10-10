@@ -49,7 +49,7 @@ It's gotten a few tweaks and additions over the years; especially the glaze[^gla
 
 # Ingredients
 
-{{< columns >}}
+{{% columns %}}
 **Cake Batter:**
 - Butter 140g
 - Powdered sugar 160g
@@ -76,7 +76,7 @@ It's gotten a few tweaks and additions over the years; especially the glaze[^gla
 - Time
 - Don't forget whipped cream
 
-{{< /columns >}}
+{{% /columns %}}
 
 [^choco]: Cooking chocolate, if available. But anything about 50% cocoa (or more) should be good.
 
