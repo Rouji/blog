@@ -79,7 +79,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 
 [^choco]: Kochschokolade, wenn es eine gibt. Aber vermutlich alles ab ca. 50% Kakao gut.
 
-# Kuchenteig
+# Tortenteig
 - Den Ofen auf 170°C vorheizen. Die Tortenform mit Butter bestreichen und mit Mehl bestäuben.  
     180g Schokolade in einem Wasserbad schmelzen. (Oder *vorsichtig* in der Mikrowelle)
 
