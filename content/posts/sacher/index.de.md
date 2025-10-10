@@ -1,16 +1,22 @@
 ---
-title: "Sachertorte"
+title: "Sachertorte Rezept"
 date: 2025-09-08T12:00:00Z
 draft: true
 tags:
   - cooking
 cover:
-  image: "orig.jpg"
+  image: "recipe_cropped_more.webp"
 ---
 
-Ursprünglich aus einem alten Kochbuch meiner Mutter.  
+Mein go-to Sacher Rezept.  
+
+Ursprünglich aus einem alten Kochbuch meiner Mutter. [^original]  
 Bisschen komisch geschrieben, hab selbst als Muttersprachler gegrübelt🙃  
-{{< details summary="Originaltext" >}}
+
+[^original]: ["Wiener Küche"](title_cropped.webp) von Olga und Adolf Hess, 1970
+
+[Original aus dem Buch](recipe_cropped.webp)
+{{< details summary="Text" >}}
 Torte:
 - Butter 140g
 - Zucker 160g
@@ -35,12 +41,15 @@ Sobald sie erkaltet ist, wird sie oben glattgeschnitten, umgedreht, die ehemalig
 Schokoladenglasur: Zucker mit Wasser kochen lassen, bis er sich spinnt, sodann die Schokolade hineingeben, abtreiben, bis die Masse glatt ist aufkochen lassen, passieren, noch einmal aufkochen lassen und mit dem Kochlöffel an der Seite der Kasserolle so lange abrühren, bis die Glasur genügend dick ist, und damit die Torte überziehen. 
 {{< /details >}}
 
+  
 Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^glasur] ist grob ersetzt worden.  
 
-[^glasur]: (Was auch immer "spinnen" in dem Kontext heißt ... und allgemein unnötig überkompliziert)
+[^glasur]: Was auch immer "spinnen" in dem Kontext heißt ... und allgemein unnötig überkompliziert
+
 
 # Sieben Sachen
 
+{{< columns >}}
 **Torte:**
 - Butter 140g
 - Staubzucker 160g
@@ -51,19 +60,23 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 - Butter und Mehl für die Form
 - Marillenmarmelade 100~200g
 
+<--->
+
 **Glasur:**
 - Schokolade ~150g
 - Butter ~70g
 
+<--->
+
 **Sonst noch nötig:**
 - 2 größere Schüsseln
-- Runde Kuchenform 18~22cm
+- Runde Kuchenform, 18~22cm
 - Bisschen Mehl und Butter für die Form
 - Ofen
 - Zeit
 - Schlagobers nicht vergessen
-
 [^choco]: Kochschokolade, wenn es eine gibt. Aber vermutlich alles ab ca. 50% gut.
+{{< /columns >}}
 
 # Kuchenteig
 - Den Ofen auf 170°C vorheizen. Die Tortenform mit Butter bestreichen und mit Mehl bestäuben.  
@@ -87,6 +100,11 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 # Glasur
 Ziemlich banal. Aber gut. 
 
-- 150g Schokolade und 70g Butter zusammen im Wasserbad schmelzen. 
+- 150g Schokolade und 70g Butter zusammen im Wasserbad (oder Mikrowelle) schmelzen. 
 - Über die Torte gießen und gleichmäßig verteilen.
+- Fest werden lassen.
+
+# Essen
+Sich die Torte ins Gesicht stopfen.  
+Mit Schlagobers.
 
