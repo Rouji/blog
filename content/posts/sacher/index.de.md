@@ -1,7 +1,7 @@
 ---
 title: "Sachertorte Rezept"
 date: 2025-09-08T12:00:00Z
-draft: true
+draft: false
 tags:
   - cooking
 cover:
@@ -53,7 +53,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 **Torte:**
 - Butter 140g
 - Staubzucker 160g
-- Schokolade 180g
+- Schokolade[^choco] 180g
 - 10 Eiklar
 - 8 Dotter
 - Mehl 120g
@@ -63,7 +63,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 <--->
 
 **Glasur:**
-- Schokolade ~150g
+- Schokolade[^choco] ~150g
 - Butter ~70g
 
 <--->
@@ -71,12 +71,13 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 **Sonst noch nötig:**
 - 2 größere Schüsseln
 - Runde Kuchenform, 18~22cm
-- Bisschen Mehl und Butter für die Form
+- Sieb für das Mehl
 - Ofen
 - Zeit
 - Schlagobers nicht vergessen
-[^choco]: Kochschokolade, wenn es eine gibt. Aber vermutlich alles ab ca. 50% gut.
 {{< /columns >}}
+
+[^choco]: Kochschokolade, wenn es eine gibt. Aber vermutlich alles ab ca. 50% Kakao gut.
 
 # Kuchenteig
 - Den Ofen auf 170°C vorheizen. Die Tortenform mit Butter bestreichen und mit Mehl bestäuben.  
@@ -86,7 +87,7 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 
 - 10 Eier trennen.  
     10 Eiklar in die andere große Schüssel, 8 Eigelb einzeln zur Buttermasse einrühren.  
-    Die übrigen 2 Eigelb der Katze geben, oder so.
+    Die übrigen 2 Eigelb der Katze geben.  
 - 10 Eiklar zu steifem Schnee schlagen.  
     Den Schnee und 120g Mehl (gesiebt!) abwechselnd kleinweise zur Buttermasse hinzugeben und [unterheben](https://youtu.be/d2ocy2sN01g?si=dVz0LA8zj0AdrUaX&t=100).
 
@@ -96,15 +97,17 @@ Es hat über die Jahre ein paar Verfeinerungen abbekommen; speziell die Glasur[^
 - Aus dem Ofen nehmen und ca. 20 Minuten abkühlen lassen.  
     Oberseite glatt schneiden, Torte horizontal in der Mitte halbieren.  
     Marillenmarmelade großzügig zwischen die Hälften und auf die Oberseite streichen.  
+    Hälften wieder zusammensetzen.
 
 # Glasur
 Ziemlich banal. Aber gut. 
 
 - 150g Schokolade und 70g Butter zusammen im Wasserbad (oder Mikrowelle) schmelzen. 
-- Über die Torte gießen und gleichmäßig verteilen.
+- In einem Rutsch über die Torte gießen, gleichmäßig verteilen und glattstreichen.
 - Fest werden lassen.
+- Done!
 
 # Essen
-Sich die Torte ins Gesicht stopfen.  
-Mit Schlagobers.
+Mit Schlagobers[^schlag].
 
+[^schlag]: "Schlagsahne"
