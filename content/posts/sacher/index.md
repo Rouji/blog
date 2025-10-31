@@ -29,7 +29,7 @@ Torte:
 Fülle:
 - Marillenmarmelade
 
-Glasur:
+Glaze:
 - Zucker 200g
 - Wasser 1/5l
 - Schokolade 200g
