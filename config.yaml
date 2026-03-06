@@ -8,7 +8,9 @@ markup:
     renderer:
       unsafe: true
 
-defaultContentLanguage: en
+# defaultContentLanguage: en
+disableDefaultLanguageRedirect: true
+defaultContentLanguageInSubdir: true
 languages:
   en:
     languageName: English
