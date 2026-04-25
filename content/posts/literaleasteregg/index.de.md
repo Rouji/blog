@@ -1,7 +1,7 @@
 ---
 title: "Osterei"
 date: 2026-04-03T09:00:00Z
-draft: true
+draft: false
 tags:
   - Photogrammetry
 cover:
