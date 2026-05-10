@@ -46,6 +46,9 @@ params:
     - name: github
       title: Github
       url: "https://github.com/Rouji"
+    - name: email
+      title: E-Mail
+      url: "mailto:a@r0.at"
     - name: Misskey
       title: Misskey
       url: "https://misskey.io/@marupan"
