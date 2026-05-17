@@ -13,4 +13,4 @@ cover:
 
 Horribad photogrammetry of an easter egg I painted: 
 
-{{<modelviewer src="better_egg.glb" camera-target="0m 0m 0m" min-camera-orbit="auto auto 0m" orbit="0deg 75deg 8m" alt="egg" height="90vh">}}
+{{<modelviewer src="better_egg.glb" camera-target="0m 0m 0m" min-camera-orbit="auto auto 0m" orbit="0deg 65deg 6m" alt="egg" height="90vh">}}
