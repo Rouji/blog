@@ -13,4 +13,4 @@ cover:
 
 Mein selbstbemaltes Osterei in schrecklicher Photogrammetrie:
 
-{{<modelviewer src="egg.glb" alt="egg" orbit="-10deg 55deg -100000m" height="90vh">}}
+{{<modelviewer src="better_egg.glb" camera-target="0m 0m 0m" min-camera-orbit="auto auto 0m" orbit="0deg 75deg 8m" alt="egg" height="90vh">}}

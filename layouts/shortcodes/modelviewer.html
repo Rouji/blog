@@ -4,6 +4,8 @@
 {{- $src := $model_file -}}
 {{- with $resource -}}{{- $src = .RelPermalink -}}{{- end -}}
 {{- $orbit := .Get "orbit" -}}
+{{- $target := .Get "camera-target" -}}
+{{- $minOrbit := .Get "min-camera-orbit" -}}
 {{- $height := .Get "height" | default "auto" -}}
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
-<model-viewer src="{{ $src }}" alt="{{ $alt }}" camera-controls touch-action="pan-y" color="#000000"{{ if $orbit }} camera-orbit="{{ $orbit }}"{{ end }} style="width: 100%; height: {{ $height }};"></model-viewer>
+<model-viewer src="{{ $src }}" alt="{{ $alt }}" camera-controls touch-action="pan-y" color="#000000"{{ if $minOrbit }} min-camera-orbit="{{ $minOrbit }}"{{ end }}{{ if $orbit }} camera-orbit="{{ $orbit }}"{{ end }}{{ if $target }} camera-target="{{ $target }}"{{ end }} style="width: 100%; height: {{ $height }};"></model-viewer>
