@@ -1,5 +1,5 @@
 baseURL: 'https://b.r0.at/'
-languageCode: 'en-us'
+locale: 'en-us'
 title: 'Wurstkäse'
 theme: 'PaperMod'
 
@@ -8,12 +8,15 @@ markup:
     renderer:
       unsafe: true
 
+security:
+  allowContent: ['.*']
+
 # defaultContentLanguage: en
 disableDefaultLanguageRedirect: true
 defaultContentLanguageInSubdir: true
 languages:
   en:
-    languageName: English
+    label: English
     weight: 1
     params:
       homeInfoParams:
@@ -21,7 +24,7 @@ languages:
         Content: This be a blog.
 
   ja:
-    languageName: 日本語
+    label: 日本語
     weight: 2
     params:
       homeInfoParams:
@@ -29,7 +32,7 @@ languages:
         Content: これブログね。
 
   de:
-    languageName: Deutsch
+    label: Deutsch
     weight: 3
     params:
       homeInfoParams:
